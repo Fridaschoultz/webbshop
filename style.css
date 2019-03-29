@@ -2,21 +2,20 @@
     background-color: rgb(255, 255, 255);
 }
 
+
+
+
+
+
 /* ------ ELLINOR ------ */
 .heading {
+  background: rgb(255, 255, 255);
+  border: 10px solid #63efe4;
 
-    background: #ffffff;
-    border: 10px solid #63EFE4;
-    padding-left: 10px;
-    margin: 0px;
-
-  background: #ffffff;
-  border: 10px solid #FF1E15;
   padding-left: 10px;
   padding: 20px;
   margin: 5px;
-  font-family: AmericanTypewriter-Light;
-  
+  font-family: 'The Girl Next Door', cursive;
 }
 .headline {
   display: inline;
