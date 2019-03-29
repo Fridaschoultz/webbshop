@@ -1,0 +1,65 @@
+[
+    {
+        "id"    : "1",
+        "author": "Elsa Beskow", 
+        "title" : "Blomsterfesten i täppan",
+        "price" : "139"
+    },
+
+    {
+        "id"    : "2",
+        "author": "Beatrix Potter",
+        "title" : "Sagan om Pelle Kanin", 
+        "price" : "128"
+    },
+
+    {
+        "id": "3",
+        "author": "Lewis Carroll",
+        "title" : "Alice i Underlandet", 
+        "price" : "138"
+    }, 
+
+    {
+        "id": "4",
+        "author": "Stina Wirsén",
+        "title" : "Vem är arg?", 
+        "price" : "64"
+    }, 
+
+    {
+        "id": "5",
+        "author": "A. A. Milne",
+        "title" : "Nalle Puh", 
+        "price" : "141"
+    },
+
+    {
+        "id": "6",
+        "author": "C. S. Lewis",
+        "title" : "Min morbror trollkarlen", 
+        "price" : "99"
+    },
+
+    {
+        "id": "7",
+        "author": "Roald Dahl",
+        "title" : "Kalle och chokladfabriken", 
+        "price" : "128"
+    },
+    
+    {
+        "id": "",
+        "author": "",
+        "title" : "", 
+        "price" : ""
+    },
+
+    {
+        "id": "",
+        "author": "",
+        "title" : "", 
+        "price" : ""
+    }
+
+]
