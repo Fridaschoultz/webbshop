@@ -3,83 +3,107 @@
         "id"    : "1",
         "author": "Elsa Beskow", 
         "title" : "Blomsterfesten i täppan",
-        "price" : "139"
+        "price" : "139",
+        "imgUrl": "./images/elsabeskow.jpg", 
+        "info"  : ""
     },
 
     {
         "id"    : "2",
         "author": "Beatrix Potter",
         "title" : "Sagan om Pelle Kanin", 
-        "price" : "128"
+        "price" : "128",
+        "imgUrl": "./images/beatrixpotter.jpg",
+        "info"  : "Pelle kanin och hans vänner"
     },
 
     {
         "id": "3",
         "author": "Lewis Carroll",
         "title" : "Alice i Underlandet", 
-        "price" : "138"
+        "price" : "138",
+        "imgUrl": "./images/lewiscarroll.jpg", 
+        "info"  : ""
     }, 
 
     {
         "id": "4",
         "author": "Stina Wirsén",
         "title" : "Vem är arg?", 
-        "price" : "64"
+        "price" : "64",
+        "imgUrl": "./images/stinawirsen.jpg", 
+        "info"  : ""
     }, 
 
     {
         "id": "5",
         "author": "A. A. Milne",
         "title" : "Nalle Puh", 
-        "price" : "141"
+        "price" : "141",
+        "imgUrl": "./images/aamilne.jpg", 
+        "info"  : "Nalle Puh och hans vänner"
     },
 
     {
         "id": "6",
         "author": "C. S. Lewis",
         "title" : "Min morbror trollkarlen", 
-        "price" : "99"
+        "price" : "99",
+        "imgUrl": "./images/cslewis.jpg", 
+        "info"  : ""
     },
 
     {
         "id": "7",
         "author": "Roald Dahl",
         "title" : "Kalle och chokladfabriken", 
-        "price" : "128"
+        "price" : "128",
+        "imgUrl": "./images/roalddahl.png", 
+        "info"  : ""
     },
     
     {
         "id": "8",
         "author": "Sven Nordqvist",
         "title" : "När Findus var liten och försvann", 
-        "price" : "108"
+        "price" : "108",
+        "imgUrl": "./images/svennordqvist.jpg", 
+        "info"  : ""
     },
 
     {
         "id": "9",
         "author": "Eva Bexell",
         "title" : "Boken om prostens barnbarn", 
-        "price" : "128"
+        "price" : "128",
+        "imgUrl": "/images/evabexell.jpg", 
+        "info"  : ""
     },
 
     {
         "id": "10",
         "author": "Catarina Kruusval",
         "title" : "Tre små grisar", 
-        "price" : "84"
+        "price" : "84",
+        "imgUrl": "./images/catarinakruusval.jpg", 
+        "info"  : "Historien om tre små grisar"
     },
 
     {
         "id": "11",
         "author": "Tove Jansson",
         "title" : "Vem ska trösta knyttet?", 
-        "price" : "128"
+        "price" : "128",
+        "imgUrl": "./images/tovejansson.jpg", 
+        "info"  : ""
     },
 
     {
         "id": "12",
         "author": "Jujja Wieslander",
         "title" : "Mamma Mu låtsas", 
-        "price" : "120"
+        "price" : "120",
+        "imgUrl": "./images/jujjawieslander.png", 
+        "info"  : ""
     }
 ]
