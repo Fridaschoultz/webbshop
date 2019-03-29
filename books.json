@@ -49,17 +49,37 @@
     },
     
     {
-        "id": "",
-        "author": "",
-        "title" : "", 
-        "price" : ""
+        "id": "8",
+        "author": "Sven Nordqvist",
+        "title" : "När Findus var liten och försvann", 
+        "price" : "108"
     },
 
     {
-        "id": "",
-        "author": "",
-        "title" : "", 
-        "price" : ""
-    }
+        "id": "9",
+        "author": "Eva Bexell",
+        "title" : "Boken om prostens barnbarn", 
+        "price" : "128"
+    },
 
+    {
+        "id": "10",
+        "author": "Catarina Kruusval",
+        "title" : "Tre små grisar", 
+        "price" : "84"
+    },
+
+    {
+        "id": "11",
+        "author": "Tove Jansson",
+        "title" : "Vem ska trösta knyttet?", 
+        "price" : "128"
+    },
+
+    {
+        "id": "12",
+        "author": "Jujja Wieslander",
+        "title" : "Mamma Mu låtsas", 
+        "price" : "120"
+    }
 ]
