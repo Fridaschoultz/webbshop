@@ -1,21 +1,23 @@
-*{
-    background-color: rgb(255, 255, 255);
+* {
+  background-color: rgb(255, 255, 255);
 }
-body{
-    width: 170vh;
-    margin: auto;
-  
-    background-color: rgb(157, 140, 140);
+.content {
+  width: 170vh;
+  margin: auto;
+  background-color: rgb(157, 140, 140);
 }
 /* ------ ELLINOR ------ */
-/* ------ ELLINOR SLUT ------ */
+.heading {
+  background: #ffffff;
+  border: 10px solid #63EFE4;
+  padding-left: 10px;
+  margin: 0px;
+}
 
+/* ------ ELLINOR SLUT ------ */
 
 /* ------ FRIDA ------ */
 /* ------ FRIDA SLUTAR ------ */
 
-
-
 /* ------ SOFIE ------ */
 /* ------ SOFIE SLUTAR ------ */
-
