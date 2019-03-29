@@ -9,9 +9,31 @@
 /* ------ ELLINOR ------ */
 .heading {
   background: #ffffff;
-  border: 10px solid #63EFE4;
+  border: 10px solid #63efe4;
   padding-left: 10px;
+  padding: 20px;
   margin: 0px;
+  
+}
+.barabarn {
+  display: inline;
+}
+.menu {
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  display: inline;
+  position: relative;
+}
+
+.center {
+  font-family: AmericanTypewriter-Light;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  display: inline;
+  padding: 2px;
+  margin: auto;
 }
 
 /* ------ ELLINOR SLUT ------ */
