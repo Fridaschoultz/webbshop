@@ -12,12 +12,51 @@
 
 /* ------ ELLINOR ------ */
 .heading {
+
     background: #ffffff;
     border: 10px solid #63EFE4;
     padding-left: 10px;
     margin: 0px;
+
+  background: #ffffff;
+  border: 10px solid #63efe4;
+  padding-left: 10px;
+  padding: 20px;
+  margin: 5px;
+  font-family: AmericanTypewriter-Light;
+  
+}
+.headline {
+  display: inline;
+  text-align: left;
+}
+.menu {
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  display: inline;
+  position: relative;
+
 }
 
+.age{
+    text-align: center;
+    padding-right: 20px;
+
+}
+
+.center {
+  font-family: AmericanTypewriter-Light;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  display: inline;
+  margin: 200px;
+}
+
+.shopping-img{
+margin-left: 220px;
+}
 /* ------ ELLINOR SLUT ------ */
 
 /* ------ FRIDA ------ */
