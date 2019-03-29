@@ -12,11 +12,13 @@
   border: 10px solid #63efe4;
   padding-left: 10px;
   padding: 20px;
-  margin: 0px;
+  margin: 5px;
+  font-family: AmericanTypewriter-Light;
   
 }
-.barabarn {
+.headline {
   display: inline;
+  text-align: left;
 }
 .menu {
   font-size: 30px;
@@ -26,15 +28,21 @@
   position: relative;
 }
 
+.age{
+    text-align: center;
+    padding-right: 20px;
+
+}
+
 .center {
   font-family: AmericanTypewriter-Light;
   font-size: 30px;
   color: #000000;
   text-align: center;
   display: inline;
-  padding: 2px;
-  margin: auto;
+  margin: 200px;
 }
+
 
 /* ------ ELLINOR SLUT ------ */
 
