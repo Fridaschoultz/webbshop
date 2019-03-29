@@ -2,14 +2,14 @@
     background-color: rgb(255, 255, 255);
 }
 
-.content {
+/*.content {
     width: 100%;
     margin: auto;
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
-    /*background-color: rgb(157, 140, 140);*/
-}
+    /*background-color: rgb(157, 140, 140);
+}*/
 
 /* ------ ELLINOR ------ */
 .heading {
@@ -69,19 +69,43 @@ margin-left: 220px;
     display: flex;
     justify-content: space-around;
 }
-.content-left {
+.content-left-1 {
     display: flex;
     width: 30.3%;
     margin-left: 20px;
     margin-top: 50px;
 }
 
-.content-middle {
+.content-middle-1 {
     display: flex;
     width: 30.3%;
 }
 
-.content-right {
+.content-right-1 {
+    display: flex;
+    width: 30.3%;
+}
+.content-2{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-left-2 {
+    display: flex;
+    width: 30.3%;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.content-middle-2 {
+    display: flex;
+    width: 30.3%;
+}
+
+.content-right-2 {
     display: flex;
     width: 30.3%;
 }
