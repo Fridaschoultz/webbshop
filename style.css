@@ -1,22 +1,127 @@
 * {
-  background-color: rgb(255, 255, 255);
-}
-.content {
-  width: 170vh;
-  margin: auto;
-  background-color: rgb(157, 140, 140);
-}
-/* ------ ELLINOR ------ */
-.heading {
-  background: #ffffff;
-  border: 10px solid #63EFE4;
-  padding-left: 10px;
-  margin: 0px;
+    background-color: rgb(255, 255, 255);
 }
 
+.content {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    /*background-color: rgb(157, 140, 140);*/
+}
+
+/* ------ ELLINOR ------ */
+.heading {
+
+    background: #ffffff;
+    border: 10px solid #63EFE4;
+    padding-left: 10px;
+    margin: 0px;
+
+  background: #ffffff;
+  border: 10px solid #63efe4;
+  padding-left: 10px;
+  padding: 20px;
+  margin: 5px;
+  font-family: AmericanTypewriter-Light;
+  
+}
+.headline {
+  display: inline;
+  text-align: left;
+}
+.menu {
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  display: inline;
+  position: relative;
+
+}
+
+.age{
+    text-align: center;
+    padding-right: 20px;
+
+}
+
+.center {
+  font-family: AmericanTypewriter-Light;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  display: inline;
+  margin: 200px;
+}
+
+.shopping-img{
+margin-left: 220px;
+}
 /* ------ ELLINOR SLUT ------ */
 
 /* ------ FRIDA ------ */
+
+.content-1{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.content-left {
+    display: flex;
+    width: 30.3%;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.content-middle {
+    display: flex;
+    width: 30.3%;
+}
+
+.content-right {
+    display: flex;
+    width: 30.3%;
+}
+
+img{
+height: 300px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+footer {
+    text-align: center;
+}
+
 /* ------ FRIDA SLUTAR ------ */
 
 /* ------ SOFIE ------ */
