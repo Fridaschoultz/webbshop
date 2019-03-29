@@ -4,6 +4,10 @@
 body{
     width: 170vh;
     margin: auto;
+  
+    background-color: rgb(157, 140, 140);
+}
+=======
     background-color: rgb(232, 232, 232);
 }
 /* ------ ELLINOR ------ */
@@ -13,3 +17,4 @@ body{
 
 
 /* ------ SOFIE ------ */
+
