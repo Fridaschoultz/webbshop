@@ -5,49 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jQuery Ajax</title>
-    <style>
-    img{
-        height: 500px;
-        width: auto; 
-    }
-    </style>
+    <title>Test</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
+
+
 
 <body>
 
-    <div class="content"></div>
+    <header>
+        <a href="index.html"><img class="logo" src="images/logo.jpg" alt="shop logo"></a>
+        <a href="test-cart.html"><img class="cartlogo" src="images/cartlogo.jpg" alt=""></a>
+    </header>
+
+    <div id="products" class="content grid-container"></div>
+
+    <footer>
+        <a class="jsonlink" target="blank" href="books.json">{JSON}</a>
+    </footer>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="javascript.js"></script>
     <script>
-        $(document).ready(function () {
-            $.getJSON('books.json', function (data) {
-                let result = ''; 
-                for(let i = 0; i < data.length; i++){
-                result += `
-
-                <div class="card">         
-                <img id="img" src="${data[i].imgUrl}"> <br>
-                <h1">${data[i].title}</h1>
-                <p>${data[i].price}  kr</p>
-                <p>${data[i].info}</p>
-                <p><button>Köp</button></p>
-                </div>`; 
-
-                $('.content').html(result);  
-                
-            }
-            })
-        }); 
-
-
-        
-
-
-       
-
-
-
+        $(function() {
+            fillCards();
+        });
     </script>
 </body>
 
