@@ -12,19 +12,13 @@
 
 /* ------ ELLINOR ------ */
 .heading {
-
-    background: #ffffff;
-    border: 10px solid #63EFE4;
-    padding-left: 10px;
-    margin: 0px;
-
-  background: #ffffff;
+  background: rgb(255, 255, 255);
   border: 10px solid #63efe4;
+
   padding-left: 10px;
   padding: 20px;
   margin: 5px;
-  font-family: AmericanTypewriter-Light;
-  
+  font-family: 'The Girl Next Door', cursive;
 }
 .headline {
   display: inline;
@@ -103,10 +97,10 @@ header{
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #000;
+    background-color:green;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     font-size: 18px;
   }
   
