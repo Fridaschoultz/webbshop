@@ -5,44 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title>jQuery Ajax</title>
-    <style>
-    img{
-        height: 500px;
-        width: auto; 
-    }
-    </style>
-</head>
-
-<body>
-    <div class="content"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script>
-        $(document).ready(function () {
-            $.getJSON('books.json', function (data) {
-                let result = ''; 
-                for(let i = 0; i < data.length; i++){
-                result += `
-
-                <div class="card">         
-                <img id="img" src="${data[i].imgUrl}"> <br>
-                <h1">${data[i].title}</h1>
-                <p>${data[i].price}  kr</p>
-                <p>${data[i].info}</p>
-                <p><button>Köp</button></p>
-                </div>`; 
-=======
     <title>Test</title>
     <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
->>>>>>> 35029cd7d7f1ecd83ec35def9c48e791a6f0a8d5
 
 
 
@@ -56,7 +27,7 @@
     <div id="products" class="content grid-container"></div>
 
     <footer>
-        <a class="jsonlink" target="blank" href="books.json">{JSON}</a>
+        Copyright &copy; 2019 &bull; BaraBarnBöcker <a class="jsonlink" target="_blank" href="./books.json">{JSON}</a>
     </footer>
 
 
