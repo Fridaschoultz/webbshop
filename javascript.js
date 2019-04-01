@@ -228,3 +228,4 @@ let updateCart = function(id, quantity) {
     
     localStorage.setItem('cart', JSON.stringify(cart));
 };
+

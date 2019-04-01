@@ -1,12 +1,12 @@
 * {
     background-color: rgb(255, 255, 255);
+    box-sizing: border-box; 
 }
 
 .content {
-    width: 100%;
+    align-content: center; 
+    width: 80%;
     margin: auto;
-    display: flex;
-    justify-content: space-around;
     /*background-color: rgb(157, 140, 140);*/
 }
 
@@ -54,48 +54,44 @@
   margin: 200px;
 }
 
-.shopping-img{
-margin-left: 220px;
-}
+
 /* ------ ELLINOR SLUT ------ */
 
 /* ------ FRIDA ------ */
 
-.content-1{
-    display: flex;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-}
-.content-left {
-    display: flex;
-    width: 30.3%;
-    margin-left: 20px;
-    margin-top: 50px;
+header{
+    /*border-bottom: 3px solid rgb(214, 207, 255); */
+    border-bottom: 2px solid rgb(102, 102, 102); 
 }
 
-.content-middle {
-    display: flex;
-    width: 30.3%;
+.logo{
+    width: 25%;
+    height: auto;
+    margin-left: 20px; 
 }
 
-.content-right {
-    display: flex;
-    width: 30.3%;
-}
-
-img{
-height: 300px;
+.cartlogo{
+    width: 7%; 
+    position: absolute;
+    right: 4%; 
+    top: 5%;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: auto;
+    margin: auto; 
     text-align: center;
     font-family: arial;
   }
+
+  .float{
+    min-width: 100%; 
+    height: auto;
+    float: left; 
+    margin: 20px; 
+  }
+
   
   .price {
     color: grey;
@@ -120,9 +116,49 @@ height: 300px;
 
 footer {
     text-align: center;
+    background-image: linear-gradient(rgba(208, 246, 255, 0.322), rgba(196, 255, 245, 0.383)); 
+    padding: 25px;    
 }
 
 /* ------ FRIDA SLUTAR ------ */
 
 /* ------ SOFIE ------ */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 10px auto ; 
+    text-align: center;
+  }
+
+  .jsonlink{
+    color: black; 
+  }
+
+  .jsonlink:hover{
+      color: rgb(134, 98, 0); 
+      text-decoration: none; 
+  }
+
+
+  .small-img{
+    width: 50px;
+    height: auto;
+  }
+ 
+  main{
+    width: 960px;
+    margin: auto; 
+  }
+
+  img{
+    width: 100%; 
+  }
+
 /* ------ SOFIE SLUTAR ------ */
