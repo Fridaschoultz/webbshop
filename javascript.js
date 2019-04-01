@@ -143,7 +143,7 @@ let fillCards = async function() {
             <div class="card grid-item" data-id="${books[i].id}">   
             <div class="card-body">      
             <img id="img" src="${books[i].imgUrl}">
-            <h1>${books[i].title}</h1>
+            <h3>${books[i].title}</h3>
             <p>${books[i].info}</p>
             <p>${books[i].price} kr</p>
             <input class="quantity" type="number" min="1" max="99" value="1">
