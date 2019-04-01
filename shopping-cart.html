@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-    <a href="test.html">tillbaka</a>
+    <a href="index.html">tillbaka</a>
     <div class="shoppingcart">
 
         <h1>Kundvagn</h1>
@@ -52,6 +52,9 @@
         <label>
             Telefon
             <input type="tel" name="telephone" placeholder="" required>
+            <p class="" style="display : none; color: red;">
+                Telefonnummret får endast innehålla siffror
+            </p>
         </label>
     
         <label>
@@ -67,11 +70,17 @@
         <label>
             Postnummer
             <input type="text" name="zip_code" required>
+            <p class="4-message" style="display : none; color: red;">
+                Postnummret måste vara minst 4 siffror
+            </p>
         </label>
 
         <label>
             Ort
             <input type="text" name="city" required>
+            <p class="14-message" style="display : none; color: red;">
+                För långt
+            </p>
         </label>
       
         <input type="submit" value="Köp" class="btn btn-primary">
@@ -81,6 +90,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="javascript.js"></script>
+    <script src="validate.js"></script>
     <script>
         $(function() {
             bindCart();
