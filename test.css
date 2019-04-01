@@ -1,0 +1,155 @@
+* {
+    width: 100%; 
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box; 
+}
+
+.content {
+    align-content: center; 
+    width: 80%;
+    margin: auto;
+    /*background-color: rgb(157, 140, 140);*/
+}
+
+/* ------ ELLINOR ------ */
+.heading {
+
+    background: #ffffff;
+    border: 10px solid #63EFE4;
+    padding-left: 10px;
+    margin: 0px;
+
+  background: #ffffff;
+  border: 10px solid #63efe4;
+  padding-left: 10px;
+  padding: 20px;
+  margin: 5px;
+  font-family: AmericanTypewriter-Light;
+  
+}
+.headline {
+  display: inline;
+  text-align: left;
+}
+.menu {
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  display: inline;
+  position: relative;
+
+}
+
+.age{
+    text-align: center;
+    padding-right: 20px;
+
+}
+
+.center {
+  font-family: AmericanTypewriter-Light;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  display: inline;
+  margin: 200px;
+}
+
+
+/* ------ ELLINOR SLUT ------ */
+
+/* ------ FRIDA ------ */
+
+header{
+    /*border-bottom: 3px solid rgb(214, 207, 255); */
+    border-bottom: 2px solid rgb(102, 102, 102); 
+}
+
+.logo{
+    width: 25%;
+    height: auto;
+    margin-left: 20px; 
+}
+
+.cartlogo{
+    width: 7%; 
+    position: absolute;
+    right: 4%; 
+    top: 5%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto; 
+    text-align: center;
+    font-family: arial;
+  }
+
+  .float{
+    min-width: 100%; 
+    height: auto;
+    float: left; 
+    margin: 20px; 
+  }
+
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+footer {
+    text-align: center;
+    background-image: linear-gradient(rgba(208, 246, 255, 0.322), rgba(196, 255, 245, 0.383)); 
+    padding: 25px;    
+}
+
+/* ------ FRIDA SLUTAR ------ */
+
+/* ------ SOFIE ------ */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 10px auto ; 
+    text-align: center;
+  }
+
+  .jsonlink{
+    color: black; 
+  }
+
+  .jsonlink:hover{
+      color: rgb(134, 98, 0); 
+      text-decoration: none; 
+  }
+
+
+  .small-img{
+    width: 50px;
+    height: auto;
+  }
+/* ------ SOFIE SLUTAR ------ */
