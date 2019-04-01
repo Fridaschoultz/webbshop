@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>jQuery Ajax</title>
     <style>
     img{
@@ -32,21 +33,39 @@
                 <p>${data[i].info}</p>
                 <p><button>Köp</button></p>
                 </div>`; 
+=======
+    <title>Test</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-                $('.content').html(result);  
-                
-            }
-            })
-        }); 
-
-
-        
-
-
-       
+</head>
+>>>>>>> 35029cd7d7f1ecd83ec35def9c48e791a6f0a8d5
 
 
 
+<body>
+
+    <header>
+        <a href="index.html"><img class="logo" src="images/logo.jpg" alt="shop logo"></a>
+        <a href="test-cart.html"><img class="cartlogo" src="images/cartlogo.jpg" alt=""></a>
+    </header>
+
+    <div id="products" class="content grid-container"></div>
+
+    <footer>
+        <a class="jsonlink" target="blank" href="books.json">{JSON}</a>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="javascript.js"></script>
+    <script>
+        $(function() {
+            fillCards();
+        });
     </script>
 </body>
 
