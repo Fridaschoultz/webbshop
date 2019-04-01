@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kundvagn</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -27,10 +27,6 @@
 </head>
 <body>
     <a href="index.html">tillbaka</a>
-
-    
-    <main>
-
     <div class="shoppingcart">
 
         <h1>Kundvagn</h1>
@@ -56,6 +52,9 @@
         <label>
             Telefon
             <input type="tel" name="telephone" placeholder="" required>
+            <p class="" style="display : none; color: red;">
+                Telefonnummret får endast innehålla siffror
+            </p>
         </label>
     
         <label>
@@ -71,25 +70,27 @@
         <label>
             Postnummer
             <input type="text" name="zip_code" required>
+            <p class="4-message" style="display : none; color: red;">
+                Postnummret måste vara minst 4 siffror
+            </p>
         </label>
 
         <label>
             Ort
             <input type="text" name="city" required>
+            <p class="14-message" style="display : none; color: red;">
+                För långt
+            </p>
         </label>
       
         <input type="submit" value="Köp" class="btn btn-primary">
     </form>
     <div class="purchase-result"></div>
 
-</main>
-
-
-    
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="javascript.js"></script>
+    <script src="validate.js"></script>
     <script>
         $(function() {
             bindCart();
