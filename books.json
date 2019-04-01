@@ -1,85 +1,109 @@
 [
     {
-        "id"    : "1",
+        "id"    : 1,
         "author": "Elsa Beskow", 
         "title" : "Blomsterfesten i täppan",
-        "price" : "139"
+        "price" : 139,
+        "imgUrl": "./images/elsabeskow.jpg", 
+        "info"  : "Elsa Beskows tidlösa saga om de vackra blommorna och grönsakerna i trädgården. "
     },
 
     {
-        "id"    : "2",
+        "id"    : 2,
         "author": "Beatrix Potter",
         "title" : "Sagan om Pelle Kanin", 
-        "price" : "128"
+        "price" : 128,
+        "imgUrl": "./images/beatrixpotter.jpg",
+        "info"  : "I Sagan om Pelle Kanin uppmanar Fru Kanin sina fyra ungar att inte gå in i herr Karlssons trädgård. För där kan man råka riktigt illa ut"
     },
 
     {
-        "id": "3",
+        "id"    : 3,
         "author": "Lewis Carroll",
         "title" : "Alice i Underlandet", 
-        "price" : "138"
+        "price" : 138,
+        "imgUrl": "./images/lewiscarroll.jpg", 
+        "info"  : "Alice i Underlandet i Tove Janssons säregna stil och stämningsfulla skrud är den perfekta presentboken!"
     }, 
 
     {
-        "id": "4",
+        "id"    : 4,
         "author": "Stina Wirsén",
         "title" : "Vem är arg?", 
-        "price" : "64"
+        "price" : 64,
+        "imgUrl": "./images/stinawirsen.jpg", 
+        "info"  : "Vem är arg? är en liten bok om stora känslor. "
     }, 
 
     {
-        "id": "5",
+        "id"    : 5,
         "author": "A. A. Milne",
         "title" : "Nalle Puh", 
-        "price" : "141"
+        "price" : 141,
+        "imgUrl": "./images/aamilne.jpg", 
+        "info"  : "Klassikern Nalle Puh med äventyr och sköna vänner att lära känna."
     },
 
     {
-        "id": "6",
+        "id"    : 6,
         "author": "C. S. Lewis",
         "title" : "Min morbror trollkarlen", 
-        "price" : "99"
+        "price" : 99,
+        "imgUrl": "./images/cslewis.jpg", 
+        "info"  : "Läs C.S. Lewis älskade böcker om landet Narnia."
     },
 
     {
-        "id": "7",
+        "id"    : 7,
         "author": "Roald Dahl",
         "title" : "Kalle och chokladfabriken", 
-        "price" : "128"
+        "price" : 128,
+        "imgUrl": "./images/roalddahl.jpg", 
+        "info"  : "Vem ska hitta chokladkakan med guldbiljetten som öppnar dörrarna?"
     },
     
     {
-        "id": "8",
+        "id"    : 8,
         "author": "Sven Nordqvist",
         "title" : "När Findus var liten och försvann", 
-        "price" : "108"
+        "price" : 108,
+        "imgUrl": "./images/svennordqvist.jpg", 
+        "info"  : "Pettson berättar för Findus hur det var när Findus först kom till honom."
     },
 
     {
-        "id": "9",
+        "id"    : 9,
         "author": "Eva Bexell",
         "title" : "Boken om prostens barnbarn", 
-        "price" : "128"
+        "price" : 128,
+        "imgUrl": "/images/evabexell.jpg", 
+        "info"  : "När barnbarnen Carl och Anton kommer på besök då kan vad som helst hända."
     },
 
     {
-        "id": "10",
+        "id"    : 10,
         "author": "Catarina Kruusval",
         "title" : "Tre små grisar", 
-        "price" : "84"
+        "price" : 84,
+        "imgUrl": "./images/catarinakruusval.jpg", 
+        "info"  : "Pekbok om den klassiska historien om de tre små grisarna."
     },
 
     {
-        "id": "11",
+        "id"    : 11,
         "author": "Tove Jansson",
         "title" : "Vem ska trösta knyttet?", 
-        "price" : "128"
+        "price" : 128,
+        "imgUrl": "./images/tovejansson.jpg", 
+        "info"  : "En riktig bilderboksklassiker om det ensamma lilla knyttet."
     },
 
     {
-        "id": "12",
+        "id"    : 12,
         "author": "Jujja Wieslander",
         "title" : "Mamma Mu låtsas", 
-        "price" : "120"
+        "price" : 120,
+        "imgUrl": "./images/jujjawieslander.jpg", 
+        "info"  : " Vad händer om man LÅTSAS att det är sommar?"
     }
 ]
