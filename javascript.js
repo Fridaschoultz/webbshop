@@ -1,4 +1,4 @@
-let addToCart = function(id, quantity) {
+let addToCart = function (id, quantity) {
     let cart = getCart(),
         index = null;
 
@@ -7,7 +7,7 @@ let addToCart = function(id, quantity) {
             index = i;
         }
     }
-    
+
     if (index === null) {
         cart.push({
             id: id,
@@ -16,25 +16,25 @@ let addToCart = function(id, quantity) {
     } else {
         cart[index].quantity += quantity;
     }
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-let bindCart = function() {
+let bindCart = function () {
     $(document.body).on('click', '.cart-remove', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id'));
-        
+
         removeFromCart(id);
         fillCart();
     });
-    
+
     $(document.body).on('change', '.cart-quantity', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id')),
             price = parseFloat(cartElem.data('price')),
             quantity = parseInt($(this).val());
-        
+
         updateCart(id, quantity);
 
         let totalPriceElem = cartElem.find('.cart-total-price');
@@ -42,14 +42,14 @@ let bindCart = function() {
         totalPriceElem.text(price * quantity);
         cartPrice();
     });
-    
+
     $('.remove-all').on('click', function () {
         localStorage.removeItem('cart');
-        
+
         fillCart();
     });
 
-    $('.purchase').on('submit', async function(e) {
+    $('.purchase').on('submit', async function (e) {
         e.preventDefault();
 
         let form = $(this).serializeArray();
@@ -60,13 +60,13 @@ let bindCart = function() {
         }
 
         let books = await getBooks(),
-        cart = getCart();
+            cart = getCart();
 
         let productsHTML = '';
         for (let i = 0; i < cart.length; i++) {
             let book = getBook(books, cart[i].id),
                 totalPrice = (book.price * cart[i].quantity);
-            
+
             productsHTML += `
             <div class="confirm-item">
                 <span>
@@ -100,12 +100,12 @@ let bindCart = function() {
         `;
 
         $(this).remove();
-        $('.shoppingcart').remove(); 
+        $('.shoppingcart').remove();
         $('.purchase-result').html('<h2>Tack för din beställning</h2>' + html);
     });
 };
 
-let getBook = function(books, id) {
+let getBook = function (books, id) {
     for (let i = 0; i < books.length; i++) {
         if (books[i].id == id) {
             return books[i];
@@ -113,28 +113,28 @@ let getBook = function(books, id) {
     }
 };
 
-let getBooks = function() {
-    return new Promise(function(resolve) {
+let getBooks = function () {
+    return new Promise(function (resolve) {
         $.getJSON('books.json', function (data) {
             resolve(data);
         });
     });
 };
 
-let getCart = function() {
+let getCart = function () {
     let json = localStorage.getItem('cart');
-    if ( ! json) {
-  	    return [];
+    if (!json) {
+        return [];
     }
 
     try {
-  	    return JSON.parse(json);
+        return JSON.parse(json);
     } catch (e) {
         return [];
     }
 };
 
-let fillCards = async function() {
+let fillCards = async function () {
     let books = await getBooks();
 
     let result = '';
@@ -144,6 +144,11 @@ let fillCards = async function() {
             <div class="card-body">      
             <img id="img" src="${books[i].imgUrl}">
             <h3>${books[i].title}</h3>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
             <p>${books[i].info}</p>
             <p>${books[i].price} kr</p>
             <input class="quantity" type="number" min="1" max="99" value="1">
@@ -159,13 +164,13 @@ let fillCards = async function() {
         const cardElem = $(this).closest('.card'),
             id = parseInt(cardElem.data('id')),
             quantity = parseInt(cardElem.find('.quantity').val());
-        
+
         addToCart(id, quantity);
         fillCart();
     });
 };
 
-let fillCart = async function() {
+let fillCart = async function () {
     let books = await getBooks(),
         cart = getCart();
 
@@ -173,8 +178,8 @@ let fillCart = async function() {
     for (let i = 0; i < cart.length; i++) {
         let book = getBook(books, cart[i].id),
             totalPrice = (book.price * cart[i].quantity);
-        
-  	    html += `
+
+        html += `
           <div class="cart-item" data-id="${book.id}" data-price="${books[i].price}">
               <span class="cart-item-title">
                   ${book.title}
@@ -196,16 +201,16 @@ let fillCart = async function() {
     cartPrice();
 };
 
-let cartPrice = function() {
+let cartPrice = function () {
     let totalPrice = 0;
-    $('.cart-total-price').each(function() {
+    $('.cart-total-price').each(function () {
         totalPrice += parseFloat($(this).text());
     });
 
     $('.total-price').text(totalPrice);
 };
 
-let removeFromCart = function(id) {
+let removeFromCart = function (id) {
     let cart = getCart();
 
     for (let i = 0; i < cart.length; i++) {
@@ -213,11 +218,11 @@ let removeFromCart = function(id) {
             cart.splice(i, 1);
         }
     }
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-let updateCart = function(id, quantity) {
+let updateCart = function (id, quantity) {
     let cart = getCart();
 
     for (let i = 0; i < cart.length; i++) {
@@ -225,7 +230,7 @@ let updateCart = function(id, quantity) {
             cart[i].quantity = quantity;
         }
     }
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
