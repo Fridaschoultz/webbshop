@@ -1,92 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kundvagn</title>
-    <link rel="stylesheet" href="test.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-    form{
-        width: 700px;
-        height: auto;
-        margin: 5px; 
-    }
-    input{
-        margin-bottom: 10px; 
-    }
-
-    .cart, .remove-all, .total-price{
-       margin: 5px; 
-    }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cart-style.css">
 </head>
-<body>
-    <a href="index.html">tillbaka</a>
-    <div class="shoppingcart">
 
-        <h1>Kundvagn</h1>
-        
-        <div class="cart">
+<body class="cart-body">
+
+        <a href="index.html"><button class="back-btn">Fortsätt shoppa</button></a>
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form class="purchase">
+
+                    <div class="row">
+                        <div class="col-50">
+                                <div class="shoppingcart">
+                            <h3>Dina uppgifter</h3>
+                            <label><i class="fa fa-user"></i> Namn
+                                <input type="text" name="name" placeholder="Skriv fullständigt namn" required>
+                            </label>
+
+                            <label><i class="fa fa-mobile-phone"></i> Telefon
+                                <input type="text" name="telephone" placeholder="0767492335"  required>
+                                <p class="" style="display : none; color: red;">
+                                        Telefonnummret får endast innehålla siffror
+                                    </p>
+                            </label>
+                            
+
+                            
+                            <label><i class="fa fa-envelope"></i> 
+                                Mejladress
+                                <input type="email" name="email" placeholder="example@gmail.com">
+                            </label>
+
+
+
+                            <label><i class="fa fa-address-card-o"></i> 
+                                Adress
+                                <input type="text" name="address" placeholder="Tomebodavägen 2A" required>
+                            </label>
+
+
+
+                            <label><i class="fa fa-sort-numeric-asc"></i> 
+                                Postnummer
+                                <input type="text" name="zip_code" placeholder="16953" required>
+                                <p class="4-message" style="display : none; color: red;">
+                                        Postnummret måste vara minst 4 siffror
+                                    </p>
+                            </label>
+
+
+                            <label><i class="fa fa-institution"></i> 
+                                Ort
+                                <input type="text" name="city" placeholder="Solna" required>
+                                <p class="14-message" style="display : none; color: red;">
+                                        För långt
+                                    </p>
+                            </label>
+
+                        </div>
+
+
+
+
+                    </div>
+                    <input type="submit" value="Köp" class="checkout-btn">
+                </form>
+            </div>
         </div>
-        
-        <div class="remove-all">
-            Ta bort alla varor
-        </div>
-        
-        <div>
-            <span class="total-price"></span> kr
-        </div>
+        <div class="purchase-result"></div>
     </div>
-        
-    <form class="purchase">
-        <label>
-            Namn
-            <input type="text" name="name" placeholder="Skriv fullständigt namn" required>
-        </label>
-    
-        <label>
-            Telefon
-            <input type="tel" name="telephone" placeholder="" required>
-            <p class="" style="display : none; color: red;">
-                Telefonnummret får endast innehålla siffror
-            </p>
-        </label>
-    
-        <label>
-            Mejladress
-            <input type="email" name="email" required>
-        </label>
+        <div class="col-25">
+            <div class="container">
+                <h1 class="heading-cart">Kundvagn <i class="fa fa-shopping-cart"></i></h1>
+                <div class="cart">
+                </div>
+                <button class="remove-all">
+                    Ta bort alla varor
+                </button>
 
-        <label>
-            Adress
-            <input type="text" name="address" required>
-        </label>
+                <hr>
 
-        <label>
-            Postnummer
-            <input type="text" name="zip_code" required>
-            <p class="4-message" style="display : none; color: red;">
-                Postnummret måste vara minst 4 siffror
-            </p>
-        </label>
-
-        <label>
-            Ort
-            <input type="text" name="city" required>
-            <p class="14-message" style="display : none; color: red;">
-                För långt
-            </p>
-        </label>
-      
-        <input type="submit" value="Köp" class="btn btn-primary">
-    </form>
-    <div class="purchase-result"></div>
-
+                <div>
+                    Total: <span class="total-price"></span> kr
+                </div>
+            </div>
+        </div>
+        <div class="purchase-result"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="javascript.js"></script>
@@ -97,5 +103,5 @@
             fillCart();
         });
     </script>
+
 </body>
-</html>
