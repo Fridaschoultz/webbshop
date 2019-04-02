@@ -90,6 +90,7 @@ let bindCart = function () {
                 <div>
                     ${productsHTML}
                 </div>
+                <hr>
                 <div>${obj.name}</div>
                 <div>${obj.telephone}</div>
                 <div>${obj.email}</div>
@@ -97,11 +98,15 @@ let bindCart = function () {
                 <div>${obj.zip_code}</div>
                 <div>${obj.city}</div>
             </div>
+
+            
         `;
 
         $(this).remove();
-        $('.shoppingcart').remove();
-        $('.purchase-result').html('<h2>Tack för din beställning</h2>' + html);
+        $('.col-75').remove();
+        $('.col-25').remove(); 
+        localStorage.removeItem('cart');
+        $('.purchase-result').html('<h2>Tack för din beställning!</h2>' + html);
     });
 };
 
@@ -180,10 +185,13 @@ let fillCart = async function () {
             totalPrice = (book.price * cart[i].quantity);
 
         html += `
+        
           <div class="cart-item" data-id="${book.id}" data-price="${books[i].price}">
+          
               <span class="cart-item-title">
                   ${book.title}
               </span>
+              
               <span>
                   <input class="cart-quantity" type="number" min="1" max="99" value="${cart[i].quantity}">
               </span>
