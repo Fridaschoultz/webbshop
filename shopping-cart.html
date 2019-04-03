@@ -22,11 +22,14 @@
                             <h3>Dina uppgifter</h3>
                             <label><i class="fa fa-user"></i> Namn
                                 <input type="text" name="name" placeholder="Skriv fullständigt namn" required>
+                                <p class="name-checkout" style="display : none; color: red;">
+                                Ditt namn får endast innehålla bokstäver
+                                </p>
                             </label>
 
                             <label><i class="fa fa-mobile-phone"></i> Telefon
-                                <input type="text" name="telephone" placeholder="0767492335"  required>
-                                <p class="" style="display : none; color: red;">
+                                <input id="test" type="text" name="telephone" placeholder="0767492335"  required>
+                                <p class="phonenumber" style="display : none; color: red;">
                                         Telefonnummret får endast innehålla siffror
                                     </p>
                             </label>
@@ -35,7 +38,8 @@
                             
                             <label><i class="fa fa-envelope"></i> 
                                 Mejladress
-                                <input type="email" name="email" placeholder="example@gmail.com">
+                                <input type="email" name="email" placeholder="example@gmail.com" id="email">
+                                <p class="proboscisA" style="display : none; color: red;"> Glöm inte @.</p>
                             </label>
 
 
@@ -49,8 +53,8 @@
 
                             <label><i class="fa fa-sort-numeric-asc"></i> 
                                 Postnummer
-                                <input type="text" name="zip_code" placeholder="16953" required>
-                                <p class="4-message" style="display : none; color: red;">
+                                <input id="phone" type="text" name="zip_code" placeholder="16953" required>
+                                <p class="postcode" style="display : none; color: red;">
                                         Postnummret måste vara minst 4 siffror
                                     </p>
                             </label>
