@@ -17,7 +17,7 @@ $(document).ready(function() {
   // Validering av Telefonnummret
   $("input[required]").keyup(phonenumber);
   let numbers = new RegExp("^[0-9]*$"); // Använder mig av RegEx (https://regex101.com)
-  // let numbers = /^[0-9]*$/; 
+  // ^ and $ will match the start and end of a line, instead of the whole string.
   function phonenumber() {
     !numbers.test($(this).val()) // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
       ? 
@@ -29,9 +29,10 @@ $(document).ready(function() {
           .hide(500);
   }
 
-  // VAlidering av Namn
+  // Validering av Namn
   $("input[required]").keyup(name);
-  let letters = new RegExp("^[a-z]*$"); // Använder mig av RegEx (https://regex101.com)
+  //let letters = new RegExp("^[a-z\s]*$"); // Använder mig av RegEx (https://regex101.com)
+  let letters = /^[a-öA-Ö\s]*$/; // Letters innehåller bokstäverna a-ö, A-Ö och space(\s).
   function name() {
     !letters.test($(this).val()) // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
       ? 
@@ -55,6 +56,33 @@ $(document).ready(function() {
           .show(500)
       : $(this)
           .siblings(".proboscisA")
+          .hide(500);
+  }
+  // Validering av Ort
+  $("#adress").keyup(adressen);
+  let adress = /^[a-öA-Ö\s 0-9]*$/; // RegEx kan även skrivas såhär
+  function adressen() {
+    !adress.test($(this).val()) 
+    // om min Regular Expression är false, visas p-taggen med klassen .proboscisA, annars göms den.
+      ? 
+        $(this)
+          .siblings(".adress")
+          .show(500)
+      : $(this)
+          .siblings(".adress")
+          .hide(500);
+  }
+  $("#ort").keyup(orten);
+  let ort = /^[a-öA-Ö\s]*$/; // RegEx kan även skrivas såhär
+  function orten() {
+    !ort.test($(this).val()) 
+    // om min Regular Expression är false, visas p-taggen med klassen .proboscisA, annars göms den.
+      ? 
+        $(this)
+          .siblings(".ort")
+          .show(500)
+      : $(this)
+          .siblings(".ort")
           .hide(500);
   }
 });
