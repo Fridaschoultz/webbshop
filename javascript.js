@@ -1,4 +1,4 @@
-let addToCart = function (id, quantity) {
+function addToCart(id, quantity) {
     let cart = getCart(),
         index = null;
 
@@ -20,7 +20,7 @@ let addToCart = function (id, quantity) {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-let bindCart = function () {
+function bindCart () {
     $(document.body).on('click', '.cart-remove', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id'));
@@ -110,7 +110,7 @@ let bindCart = function () {
     });
 };
 
-let getBook = function (books, id) {
+ function getBook(books, id) {
     for (let i = 0; i < books.length; i++) {
         if (books[i].id == id) {
             return books[i];
@@ -118,7 +118,7 @@ let getBook = function (books, id) {
     }
 };
 
-let getBooks = function () {
+function getBooks() {
     return new Promise(function (resolve) {
         $.getJSON('books.json', function (data) {
             resolve(data);
@@ -126,7 +126,7 @@ let getBooks = function () {
     });
 };
 
-let getCart = function () {
+function getCart() {
     let json = localStorage.getItem('cart');
     if (!json) {
         return [];
@@ -139,7 +139,7 @@ let getCart = function () {
     }
 };
 
-let fillCards = async function () {
+async function fillCards() {
     let books = await getBooks();
 
     let result = '';
@@ -164,18 +164,19 @@ let fillCards = async function () {
     }
 
     $('.content').html(result);
-
-    $(document.body).on('click', '.add', function () {
-        const cardElem = $(this).closest('.card'),
-            id = parseInt(cardElem.data('id')),
-            quantity = parseInt(cardElem.find('.quantity').val());
-
-        addToCart(id, quantity);
-        fillCart();
-    });
 };
 
-let fillCart = async function () {
+// ligga utanför fillCards? 
+$(document.body).on('click', '.add', function () {
+    const cardElem = $(this).closest('.card'),
+        id = parseInt(cardElem.data('id')),
+        quantity = parseInt(cardElem.find('.quantity').val());
+
+    addToCart(id, quantity);
+    fillCart();
+});
+
+async function fillCart() {
     let books = await getBooks(),
         cart = getCart();
 
@@ -209,7 +210,7 @@ let fillCart = async function () {
     cartPrice();
 };
 
-let cartPrice = function () {
+function cartPrice () {
     let totalPrice = 0;
     $('.cart-total-price').each(function () {
         totalPrice += parseFloat($(this).text());
@@ -218,7 +219,7 @@ let cartPrice = function () {
     $('.total-price').text(totalPrice);
 };
 
-let removeFromCart = function (id) {
+function removeFromCart (id) {
     let cart = getCart();
 
     for (let i = 0; i < cart.length; i++) {
@@ -230,7 +231,7 @@ let removeFromCart = function (id) {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-let updateCart = function (id, quantity) {
+function updateCart(id, quantity) {
     let cart = getCart();
 
     for (let i = 0; i < cart.length; i++) {
