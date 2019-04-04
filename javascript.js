@@ -1,3 +1,4 @@
+// Lägga till böcker i varukorgen 
 function addToCart(id, quantity) {
     let cart = getCart(),
         index = null;
@@ -20,7 +21,8 @@ function addToCart(id, quantity) {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-function bindCart () {
+// Ta bort en bok från varukorgen 
+function bindCart() {
     $(document.body).on('click', '.cart-remove', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id'));
@@ -29,6 +31,20 @@ function bindCart () {
         fillCart();
     });
 
+    // Ta bort en bok från varukorgen 
+    function removeFromCart(id) {
+        let cart = getCart();
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id == id) {
+                cart.splice(i, 1);
+            }
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+    };
+
+// Ändra antal 
     $(document.body).on('change', '.cart-quantity', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id')),
@@ -43,12 +59,27 @@ function bindCart () {
         cartPrice();
     });
 
+// Ändra antal 
+function updateCart(id, quantity) {
+    let cart = getCart();
+
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == id) {
+            cart[i].quantity = quantity;
+        }
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+// Töm varukorgen 
     $('.remove-all').on('click', function () {
         localStorage.removeItem('cart');
 
         fillCart();
     });
 
+// Bekräfta köp 
     $('.purchase').on('submit', async function (e) {
         e.preventDefault();
 
@@ -104,13 +135,14 @@ function bindCart () {
 
         $(this).remove();
         $('.col-75').remove();
-        $('.col-25').remove(); 
+        $('.col-25').remove();
         localStorage.removeItem('cart');
         $('.purchase-result').html('<h2>Tack för din beställning!</h2>' + html);
     });
 };
 
- function getBook(books, id) {
+// Hämta enskild bok 
+function getBook(books, id) {
     for (let i = 0; i < books.length; i++) {
         if (books[i].id == id) {
             return books[i];
@@ -118,14 +150,8 @@ function bindCart () {
     }
 };
 
-function getBooks() {
-    return new Promise(function (resolve) {
-        $.getJSON('books.json', function (data) {
-            resolve(data);
-        });
-    });
-};
 
+// Hämta vår key cart 
 function getCart() {
     let json = localStorage.getItem('cart');
     if (!json) {
@@ -139,6 +165,16 @@ function getCart() {
     }
 };
 
+// Hämta JSON-filen 
+function getBooks() {
+    return new Promise(function (resolve) {
+        $.getJSON('books.json', function (data) {
+            resolve(data);
+        });
+    });
+};
+
+// Hämta böckerna från JSON-filen 
 async function fillCards() {
     let books = await getBooks();
 
@@ -166,6 +202,8 @@ async function fillCards() {
     $('.content').html(result);
 };
 
+
+
 // ligga utanför fillCards? 
 $(document.body).on('click', '.add', function () {
     const cardElem = $(this).closest('.card'),
@@ -176,6 +214,7 @@ $(document.body).on('click', '.add', function () {
     fillCart();
 });
 
+// Info om varje bok i kundvagnen 
 async function fillCart() {
     let books = await getBooks(),
         cart = getCart();
@@ -210,7 +249,8 @@ async function fillCart() {
     cartPrice();
 };
 
-function cartPrice () {
+// Beställningens totala pris 
+function cartPrice() {
     let totalPrice = 0;
     $('.cart-total-price').each(function () {
         totalPrice += parseFloat($(this).text());
@@ -218,28 +258,3 @@ function cartPrice () {
 
     $('.total-price').text(totalPrice);
 };
-
-function removeFromCart (id) {
-    let cart = getCart();
-
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == id) {
-            cart.splice(i, 1);
-        }
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-};
-
-function updateCart(id, quantity) {
-    let cart = getCart();
-
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == id) {
-            cart[i].quantity = quantity;
-        }
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-};
-
