@@ -20,7 +20,8 @@ function addToCart(id, quantity) {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Click på köp-knappen 
+};
+ // Click på köp-knappen 
     $(document.body).on('click', '.add', function () {
         // Hämtar den omslutande diven för hela card (bokens space på index-sidan)
         const cardElem = $(this).closest('.card'),
@@ -33,7 +34,6 @@ function addToCart(id, quantity) {
         addToCart(id, quantity);
         fillCart();
     });
-};
 
 // Ta bort en bok från varukorgen 
 function bindCart() {
