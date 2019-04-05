@@ -1,10 +1,11 @@
 // Formulärvalidering
 
 $(document).ready(function() {
-  // Validering av Postnummret
+  // Validering av Postnummret - minst 4 siffror
   $("input[required]").keyup(postcode);
   function postcode() {
     $(this).val().length < 4
+    //!mellanslag.test($(this).val())
       ? $(this)
           .siblings(".postcode")
           .show(500) // 500 millisekunder tar det för texten med klassen .postcode att ladda.
@@ -13,6 +14,18 @@ $(document).ready(function() {
           .siblings(".postcode")
           .hide(500); 
           // 500 syftar på speed. 
+  }
+  $("input[required]").keyup(numbersOnly);
+  let post = /^[0-9\s]*$/ // Endast siffror och mellanslag
+  function numbersOnly(){
+    !post.test($(this).val())
+    ? 
+        $(this)
+          .siblings(".post")
+          .show(500)
+      : $(this)
+          .siblings(".post")
+          .hide(500); 
   }
 
   // Validering av Telefonnummret
