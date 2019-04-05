@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="cart-style.css">
+    
 </head>
 
 <body class="cart-body">
@@ -21,11 +22,14 @@
                             <h3>Dina uppgifter</h3>
                             <label><i class="fa fa-user"></i> Namn
                                 <input type="text" name="name" placeholder="Skriv fullständigt namn" required>
+                                <p class="name-checkout" style="display : none; color: red;">
+                                Ditt namn får endast innehålla bokstäver
+                                </p>
                             </label>
 
                             <label><i class="fa fa-mobile-phone"></i> Telefon
-                                <input type="text" name="telephone" placeholder="0767492335"  required>
-                                <p class="" style="display : none; color: red;">
+                                <input id="test" type="text" name="telephone" placeholder="0767492335"  required>
+                                <p class="phonenumber" style="display : none; color: red;">
                                         Telefonnummret får endast innehålla siffror
                                     </p>
                             </label>
@@ -34,22 +38,24 @@
                             
                             <label><i class="fa fa-envelope"></i> 
                                 Mejladress
-                                <input type="email" name="email" placeholder="example@gmail.com">
+                                <input type="email" name="email" placeholder="example@gmail.com" id="email">
+                                <p class="proboscisA" style="display : none; color: red;"> Glöm inte @.</p>
                             </label>
 
 
 
                             <label><i class="fa fa-address-card-o"></i> 
                                 Adress
-                                <input type="text" name="address" placeholder="Tomebodavägen 2A" required>
+                                <input type="text" name="address" id="adress" placeholder="Tomebodavägen 2A" required>
+                                <p class="adress" style="display : none; color: red;">Adress få endast innehålla bokstäver och siffror</p>
                             </label>
 
 
 
                             <label><i class="fa fa-sort-numeric-asc"></i> 
                                 Postnummer
-                                <input type="text" name="zip_code" placeholder="16953" required>
-                                <p class="4-message" style="display : none; color: red;">
+                                <input id="phone" type="text" name="zip_code" placeholder="16953" required>
+                                <p class="postcode" style="display : none; color: red;">
                                         Postnummret måste vara minst 4 siffror
                                     </p>
                             </label>
@@ -57,10 +63,9 @@
 
                             <label><i class="fa fa-institution"></i> 
                                 Ort
-                                <input type="text" name="city" placeholder="Solna" required>
-                                <p class="14-message" style="display : none; color: red;">
-                                        För långt
-                                    </p>
+                                <input id="ort" type="text" name="city" placeholder="Solna" required>
+                                <p class="ort" style="display : none; color: red;">
+                                   Ort får endast innehålla bokstäver</p>
                             </label>
 
                         </div>
@@ -95,6 +100,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="javascript.js"></script>
     <script src="validate.js"></script>
     <script>
