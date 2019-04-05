@@ -7,34 +7,36 @@ $(document).ready(function() {
     $(this).val().length < 4
       ? $(this)
           .siblings(".postcode")
-          .show(500)
-      : // 4. Dölj meddelandet om fältet innehåller minst 4 tecken
+          .show(500) // 500 millisekunder tar det för texten med klassen .postcode att ladda.
+      : // Dölj meddelandet om fältet innehåller minst 4 tecken
         $(this)
           .siblings(".postcode")
-          .hide(500);
+          .hide(500); 
+          // 500 syftar på speed. 
   }
 
   // Validering av Telefonnummret
   $("input[required]").keyup(phonenumber);
   let numbers = new RegExp("^[0-9]*$"); // Använder mig av RegEx (https://regex101.com)
-  // ^ and $ will match the start and end of a line, instead of the whole string.
+  // med ^ och $ menas början och slutet av strängen.
   function phonenumber() {
-    !numbers.test($(this).val()) // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
+    // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
+    !numbers.test($(this).val()) 
       ? 
         $(this)
           .siblings(".phonenumber")
           .show(500)
       : $(this)
           .siblings(".phonenumber")
-          .hide(500);
+          .hide(500); 
   }
 
   // Validering av Namn
   $("input[required]").keyup(name);
-  //let letters = new RegExp("^[a-z\s]*$"); // Använder mig av RegEx (https://regex101.com)
-  let letters = /^[a-öA-Ö\s]*$/; // Letters innehåller bokstäverna a-ö, A-Ö och space(\s).
+  let letters = /^[a-öA-Ö\s]*$/; // RegEx kan även skrivas såhär. Letters innehåller bokstäverna a-ö, A-Ö och space(\s).
   function name() {
-    !letters.test($(this).val()) // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
+    // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
+    !letters.test($(this).val()) 
       ? 
         $(this)
           .siblings(".name-checkout")
@@ -46,7 +48,7 @@ $(document).ready(function() {
 
   // Validering av email
   $("#email").keyup(proboscisA);
-  let proboscis = /[@]/; // RegEx kan även skrivas såhär
+  let proboscis = /[@]/; // Här syftar min tilldelade variabel på @.
   function proboscisA() {
     !proboscis.test($(this).val()) 
     // om min Regular Expression är false, visas p-taggen med klassen .proboscisA, annars göms den.
@@ -60,10 +62,9 @@ $(document).ready(function() {
   }
   // Validering av Ort
   $("#adress").keyup(adressen);
-  let adress = /^[a-öA-Ö\s 0-9]*$/; // RegEx kan även skrivas såhär
+  let adress = /^[a-öA-Ö\s 0-9]*$/;
   function adressen() {
     !adress.test($(this).val()) 
-    // om min Regular Expression är false, visas p-taggen med klassen .proboscisA, annars göms den.
       ? 
         $(this)
           .siblings(".adress")
@@ -73,10 +74,9 @@ $(document).ready(function() {
           .hide(500);
   }
   $("#ort").keyup(orten);
-  let ort = /^[a-öA-Ö\s]*$/; // RegEx kan även skrivas såhär
+  let ort = /^[a-öA-Ö\s]*$/;
   function orten() {
     !ort.test($(this).val()) 
-    // om min Regular Expression är false, visas p-taggen med klassen .proboscisA, annars göms den.
       ? 
         $(this)
           .siblings(".ort")
