@@ -36,20 +36,6 @@ function addToCart(id, quantity) {
         fillCart();
     });
 
-// Click på köp-knappen 
-$(document.body).on('click', '.add', function () {
-    // Hämtar den omslutande diven för hela card (bokens space på index-sidan) (se rad 198)
-    const cardElem = $(this).closest('.card'),
-        // Kan då hämta id och quantity 
-        id = parseInt(cardElem.data('id')),
-        quantity = parseInt(cardElem.find('.quantity').val());
-
-    // Kör en callback (upp till rad 2)
-    // skickar med id och quantity 
-    addToCart(id, quantity);
-    fillCart();
-});
-
 // Ta bort en bok från varukorgen 
 function bindCart() {
     $(document.body).on('click', '.cart-remove', function () {
