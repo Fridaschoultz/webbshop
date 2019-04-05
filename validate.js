@@ -5,7 +5,6 @@ $(document).ready(function() {
   $("input[required]").keyup(postcode);
   function postcode() {
     $(this).val().length < 4
-    //!mellanslag.test($(this).val())
       ? $(this)
           .siblings(".postcode")
           .show(500) // 500 millisekunder tar det för texten med klassen .postcode att ladda.
