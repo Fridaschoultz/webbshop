@@ -10,6 +10,7 @@
   /*background-color: rgb(157, 140, 140);*/
 }
 
+
 /* ------ ELLINOR ------ */
 .heading {
   background: #ffffff;
@@ -220,7 +221,9 @@ input {
 .cart,
 .remove-all,
 .total-price {
-  margin: 5px;
+
+  margin: 10px;
+
 }
 
 /* ------ SOFIE SLUTAR ------ */
