@@ -19,6 +19,20 @@ function addToCart(id, quantity) {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Click på köp-knappen 
+    $(document.body).on('click', '.add', function () {
+        // Hämtar den omslutande diven för hela card (bokens space på index-sidan)
+        const cardElem = $(this).closest('.card'),
+        // Kan då hämta id och quantity 
+            id = parseInt(cardElem.data('id')),
+            quantity = parseInt(cardElem.find('.quantity').val());
+    
+        // Kör en callback (upp till rad 2)
+        // med id och quantity 
+        addToCart(id, quantity);
+        fillCart();
+    });
 };
 
 // Ta bort en bok från varukorgen 
@@ -202,17 +216,6 @@ async function fillCards() {
     $('.content').html(result);
 };
 
-
-
-// ligga utanför fillCards? 
-$(document.body).on('click', '.add', function () {
-    const cardElem = $(this).closest('.card'),
-        id = parseInt(cardElem.data('id')),
-        quantity = parseInt(cardElem.find('.quantity').val());
-
-    addToCart(id, quantity);
-    fillCart();
-});
 
 // Info om varje bok i kundvagnen 
 async function fillCart() {
