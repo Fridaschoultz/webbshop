@@ -21,6 +21,7 @@ function addToCart(id, quantity) {
     localStorage.setItem('cart', JSON.stringify(cart));
 
 };
+
  // Click på köp-knappen 
     $(document.body).on('click', '.add', function () {
         // Hämtar den omslutande diven för hela card (bokens space på index-sidan)
@@ -34,6 +35,20 @@ function addToCart(id, quantity) {
         addToCart(id, quantity);
         fillCart();
     });
+
+// Click på köp-knappen 
+$(document.body).on('click', '.add', function () {
+    // Hämtar den omslutande diven för hela card (bokens space på index-sidan) (se rad 198)
+    const cardElem = $(this).closest('.card'),
+        // Kan då hämta id och quantity 
+        id = parseInt(cardElem.data('id')),
+        quantity = parseInt(cardElem.find('.quantity').val());
+
+    // Kör en callback (upp till rad 2)
+    // skickar med id och quantity 
+    addToCart(id, quantity);
+    fillCart();
+});
 
 // Ta bort en bok från varukorgen 
 function bindCart() {
@@ -58,7 +73,7 @@ function bindCart() {
         localStorage.setItem('cart', JSON.stringify(cart));
     };
 
-// Ändra antal 
+    // Ändra antal 
     $(document.body).on('change', '.cart-quantity', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id')),
@@ -73,27 +88,27 @@ function bindCart() {
         cartPrice();
     });
 
-// Ändra antal 
-function updateCart(id, quantity) {
-    let cart = getCart();
+    // Ändra antal 
+    function updateCart(id, quantity) {
+        let cart = getCart();
 
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == id) {
-            cart[i].quantity = quantity;
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id == id) {
+                cart[i].quantity = quantity;
+            }
         }
-    }
 
-    localStorage.setItem('cart', JSON.stringify(cart));
-};
+        localStorage.setItem('cart', JSON.stringify(cart));
+    };
 
-// Töm varukorgen 
+    // Töm varukorgen 
     $('.remove-all').on('click', function () {
         localStorage.removeItem('cart');
 
         fillCart();
     });
 
-// Bekräfta köp 
+    // Bekräfta köp 
     $('.purchase').on('submit', async function (e) {
         e.preventDefault();
 

@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
   // Validering av Postnummret - minst 4 siffror
+
   $("input[required]").keyup(postcode);
   function postcode() {
     $(this).val().length < 4
@@ -34,17 +35,21 @@ $(document).ready(function() {
   function phonenumber() {
     // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
     !numbers.test($(this).val()) 
+
       ? 
         $(this)
           .siblings(".phonenumber")
           .show(500)
       : $(this)
           .siblings(".phonenumber")
+
           .hide(500); 
+
   }
 
   // Validering av Namn
   $("input[required]").keyup(name);
+
   let letters = /^[a-öA-Ö\s]*$/; // RegEx kan även skrivas såhär. Letters innehåller bokstäverna a-ö, A-Ö och space(\s).
   function name() {
     // Test är en metod som gör det möjligt att testa en sträng mot en regular expression.
@@ -61,6 +66,7 @@ $(document).ready(function() {
   // Validering av email
   $("#email").keyup(proboscisA);
   let proboscis = /[@]/; // Här syftar min tilldelade variabel på @.
+
   function proboscisA() {
     !proboscis.test($(this).val()) 
     // om min Regular Expression är false, visas p-taggen med klassen .proboscisA, annars göms den.
@@ -74,9 +80,11 @@ $(document).ready(function() {
   }
   // Validering av Ort
   $("#adress").keyup(adressen);
+
   let adress = /^[a-öA-Ö\s 0-9]*$/;
   function adressen() {
     !adress.test($(this).val()) 
+
       ? 
         $(this)
           .siblings(".adress")
@@ -86,9 +94,11 @@ $(document).ready(function() {
           .hide(500);
   }
   $("#ort").keyup(orten);
+
   let ort = /^[a-öA-Ö\s]*$/;
   function orten() {
     !ort.test($(this).val()) 
+
       ? 
         $(this)
           .siblings(".ort")
