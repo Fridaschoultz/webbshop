@@ -1,4 +1,5 @@
-let addToCart = function (id, quantity) {
+// Lägga till böcker i varukorgen 
+function addToCart(id, quantity) {
     let cart = getCart(),
         index = null;
 
@@ -20,7 +21,8 @@ let addToCart = function (id, quantity) {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-let bindCart = function () {
+// Ta bort en bok från varukorgen 
+function bindCart() {
     $(document.body).on('click', '.cart-remove', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id'));
@@ -29,6 +31,20 @@ let bindCart = function () {
         fillCart();
     });
 
+    // Ta bort en bok från varukorgen 
+    function removeFromCart(id) {
+        let cart = getCart();
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id == id) {
+                cart.splice(i, 1);
+            }
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+    };
+
+// Ändra antal 
     $(document.body).on('change', '.cart-quantity', function () {
         const cartElem = $(this).closest('.cart-item'),
             id = parseInt(cartElem.data('id')),
@@ -43,12 +59,27 @@ let bindCart = function () {
         cartPrice();
     });
 
+// Ändra antal 
+function updateCart(id, quantity) {
+    let cart = getCart();
+
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == id) {
+            cart[i].quantity = quantity;
+        }
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+};
+
+// Töm varukorgen 
     $('.remove-all').on('click', function () {
         localStorage.removeItem('cart');
 
         fillCart();
     });
 
+// Bekräfta köp 
     $('.purchase').on('submit', async function (e) {
         e.preventDefault();
 
@@ -104,13 +135,14 @@ let bindCart = function () {
 
         $(this).remove();
         $('.col-75').remove();
-        $('.col-25').remove(); 
+        $('.col-25').remove();
         localStorage.removeItem('cart');
         $('.purchase-result').html('<h2>Tack för din beställning!</h2>' + html);
     });
 };
 
-let getBook = function (books, id) {
+// Hämta enskild bok 
+function getBook(books, id) {
     for (let i = 0; i < books.length; i++) {
         if (books[i].id == id) {
             return books[i];
@@ -118,15 +150,9 @@ let getBook = function (books, id) {
     }
 };
 
-let getBooks = function () {
-    return new Promise(function (resolve) {
-        $.getJSON('books.json', function (data) {
-            resolve(data);
-        });
-    });
-};
 
-let getCart = function () {
+// Hämta vår key cart 
+function getCart() {
     let json = localStorage.getItem('cart');
     if (!json) {
         return [];
@@ -139,7 +165,17 @@ let getCart = function () {
     }
 };
 
-let fillCards = async function () {
+// Hämta JSON-filen 
+function getBooks() {
+    return new Promise(function (resolve) {
+        $.getJSON('books.json', function (data) {
+            resolve(data);
+        });
+    });
+};
+
+// Hämta böckerna från JSON-filen 
+async function fillCards() {
     let books = await getBooks();
 
     let result = '';
@@ -164,18 +200,22 @@ let fillCards = async function () {
     }
 
     $('.content').html(result);
-
-    $(document.body).on('click', '.add', function () {
-        const cardElem = $(this).closest('.card'),
-            id = parseInt(cardElem.data('id')),
-            quantity = parseInt(cardElem.find('.quantity').val());
-
-        addToCart(id, quantity);
-        fillCart();
-    });
 };
 
-let fillCart = async function () {
+
+
+// ligga utanför fillCards? 
+$(document.body).on('click', '.add', function () {
+    const cardElem = $(this).closest('.card'),
+        id = parseInt(cardElem.data('id')),
+        quantity = parseInt(cardElem.find('.quantity').val());
+
+    addToCart(id, quantity);
+    fillCart();
+});
+
+// Info om varje bok i kundvagnen 
+async function fillCart() {
     let books = await getBooks(),
         cart = getCart();
 
@@ -209,7 +249,8 @@ let fillCart = async function () {
     cartPrice();
 };
 
-let cartPrice = function () {
+// Beställningens totala pris 
+function cartPrice() {
     let totalPrice = 0;
     $('.cart-total-price').each(function () {
         totalPrice += parseFloat($(this).text());
@@ -217,28 +258,3 @@ let cartPrice = function () {
 
     $('.total-price').text(totalPrice);
 };
-
-let removeFromCart = function (id) {
-    let cart = getCart();
-
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == id) {
-            cart.splice(i, 1);
-        }
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-};
-
-let updateCart = function (id, quantity) {
-    let cart = getCart();
-
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == id) {
-            cart[i].quantity = quantity;
-        }
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-};
-

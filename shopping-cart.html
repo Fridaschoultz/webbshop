@@ -45,8 +45,9 @@
 
 
                             <label><i class="fa fa-address-card-o"></i> 
-                                Adress
-                                <input type="text" name="address" placeholder="Tomebodavägen 2A" required>
+                                Leveransadress
+                                <input type="text" name="address" id="adress" placeholder="Tomebodavägen 2A" required>
+                                <p class="adress" style="display : none; color: red;">Adress få endast innehålla bokstäver och siffror</p>
                             </label>
 
 
@@ -62,10 +63,9 @@
 
                             <label><i class="fa fa-institution"></i> 
                                 Ort
-                                <input type="text" name="city" placeholder="Solna" required>
-                                <p class="14-message" style="display : none; color: red;">
-                                        För långt
-                                    </p>
+                                <input id="ort" type="text" name="city" placeholder="Solna" required>
+                                <p class="ort" style="display : none; color: red;">
+                                   Ort får endast innehålla bokstäver</p>
                             </label>
 
                         </div>
