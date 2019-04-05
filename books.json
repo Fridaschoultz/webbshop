@@ -76,7 +76,7 @@
         "author": "Eva Bexell",
         "title" : "Boken om prostens barnbarn", 
         "price" : 128,
-        "imgUrl": "/images/evabexell.jpg", 
+        "imgUrl": "./images/evabexell.jpg", 
         "info"  : "När barnbarnen Carl och Anton kommer på besök då kan vad som helst hända."
     },
 
