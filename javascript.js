@@ -95,7 +95,7 @@ function bindCart() {
         fillCart();
     });
 
-    // Bekräfta köp 
+    // Bekräfta köp - hämtar in html:en på beställnings sidan 
     $('.purchase').on('submit', async function (e) {
         e.preventDefault();
 
