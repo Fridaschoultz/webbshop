@@ -1,18 +1,19 @@
 // Lägga till böcker i varukorgen 
-function addToCart(id, quantity) {
-    let cart = getCart(),
-        index = null;
+function addToCart(id, quantity) { 
+    let cart = getCart(), 
+        index = null; 
 
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == id) {
-            index = i;
+    for (let i = 0; i < cart.length; i++) { 
+        if (cart[i].id == id) {  
+                                
+            index = i;  
         }
     }
 
-    if (index === null) {
+    if (index === null) { 
         cart.push({
             id: id,
-            quantity: quantity
+            quantity: quantity 
         });
     } else {
         cart[index].quantity += quantity;
@@ -152,14 +153,15 @@ function getBook(books, id) {
 
 
 // Hämta vår key cart 
+//returnerar en array från JSON objectet eller en tom array
 function getCart() {
-    let json = localStorage.getItem('cart');
+    let json = localStorage.getItem('cart'); // hämtar 
     if (!json) {
-        return [];
+        return []; // tom array
     }
 
     try {
-        return JSON.parse(json);
+        return JSON.parse(json); // konverterar allt till JavaScript objekt
     } catch (e) {
         return [];
     }
@@ -174,7 +176,7 @@ function getBooks() {
     });
 };
 
-// Hämta böckerna från JSON-filen 
+// Hämta böckerna från JSON-filen // hämtar in htmlen till sidan
 async function fillCards() {
     let books = await getBooks();
 
